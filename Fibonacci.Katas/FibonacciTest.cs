@@ -7,10 +7,11 @@ namespace Fibonacci.Katas
     public class FibonacciTest
     {
         [Theory]
-        [InlineData(1,0)]
-        [InlineData(2,1)]
-        [InlineData(3,1)]
-        public void GetFibonacciNumberForGivenPosition(int position,int expectedNumber)
+        [InlineData(1, 0)]
+        [InlineData(2, 1)]
+        [InlineData(3, 1)]
+        [InlineData(4, 2)]
+        public void GetFibonacciNumberForGivenPosition(int position, int expectedNumber)
         {
             FibonacciGame fibonacciGame = new FibonacciGame();
 
@@ -18,7 +19,7 @@ namespace Fibonacci.Katas
 
             Assert.Equal(expectedNumber, actualNumber);
         }
-        
+
     }
 
     public class FibonacciGame
@@ -27,10 +28,12 @@ namespace Fibonacci.Katas
         {
             if (position == 1)
                 return 0;
-            if (position == 2 || position==3)
+            if (position == 2 || position == 3)
                 return 1;
 
-            return 0;
+            int result = GetFibonacci(position - 1) + GetFibonacci(position - 2);
+
+            return result;
         }
     }
 }
