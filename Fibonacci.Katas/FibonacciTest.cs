@@ -10,8 +10,20 @@ namespace Fibonacci.Katas
         public void GetFibonacciNumberForPositionOne()
         {
             FibonacciGame fibonacciGame = new FibonacciGame();
+
             var actualNumber = fibonacciGame.GetFibonacci(1);
+
             Assert.Equal(0, actualNumber);
+        }
+
+        [Fact]
+        public void GetFibonacciNumberForPositionTwo()
+        {
+            FibonacciGame fibonacciGame = new FibonacciGame();
+
+            var actualNumber = fibonacciGame.GetFibonacci(2);
+
+            Assert.Equal(1,actualNumber);
         }
     }
 
@@ -19,7 +31,12 @@ namespace Fibonacci.Katas
     {
         public int GetFibonacci(int position)
         {
-            return position == 1 ? 0 : 1;
+            if (position == 1)
+                return 0;
+            if (position == 2)
+                return 1;
+
+            return 0;
         }
     }
 }
