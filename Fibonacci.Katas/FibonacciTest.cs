@@ -12,6 +12,7 @@ namespace Fibonacci.Katas
         [InlineData(3, 1)]
         [InlineData(4, 2)]
         [InlineData(5,3)]
+        [InlineData(6, 5)]
         public void GetFibonacciNumberForGivenPosition(int position, int expectedNumber)
         {
             FibonacciGame fibonacciGame = new FibonacciGame();
