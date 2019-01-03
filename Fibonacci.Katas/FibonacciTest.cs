@@ -6,35 +6,19 @@ namespace Fibonacci.Katas
 {
     public class FibonacciTest
     {
-        [Fact]
-        public void GetFibonacciNumberForPositionOne()
+        [Theory]
+        [InlineData(1,0)]
+        [InlineData(2,1)]
+        [InlineData(3,1)]
+        public void GetFibonacciNumberForGivenPosition(int position,int expectedNumber)
         {
             FibonacciGame fibonacciGame = new FibonacciGame();
 
-            var actualNumber = fibonacciGame.GetFibonacci(1);
+            var actualNumber = fibonacciGame.GetFibonacci(position);
 
-            Assert.Equal(0, actualNumber);
+            Assert.Equal(expectedNumber, actualNumber);
         }
-
-        [Fact]
-        public void GetFibonacciNumberForPositionTwo()
-        {
-            FibonacciGame fibonacciGame = new FibonacciGame();
-
-            var actualNumber = fibonacciGame.GetFibonacci(2);
-
-            Assert.Equal(1,actualNumber);
-        }
-
-        [Fact]
-        public void GetFibonacciNumberForPositionThree()
-        {
-            FibonacciGame fibonacciGame = new FibonacciGame();
-
-            var actualNumber = fibonacciGame.GetFibonacci(3);
-
-            Assert.Equal(1,actualNumber);
-        }
+        
     }
 
     public class FibonacciGame
